@@ -143,7 +143,7 @@ The WT fails too without MSA:
 
 Oddly, providing a template for the NSP3 also fails.
 
-![AF3-w-template](AF3-w-template.png)
+![AF3-w-template](images/AF3-w-template.png)
 
 The solution was then to munge the A3M of the NSP3 to be gapped appropriately.
 NSP2B was left out to favour true binders.
@@ -179,6 +179,13 @@ see JSON files for the actual details.
 Also, note that in the PDB files, 
 the temperature factor is Rosetta per residue energy, design residues have an occupancy of 0.5,
 for proper analysis see the actual json files, this is just for PyMOL.
+
+## Point mutations
+
+What point mutations are neutral or stabilising for the closed state, but are destabilising for the open state?
+And which of these have precedence in homologues?
+
+...to be continued...
 
 ## Chimotrypsin
 
