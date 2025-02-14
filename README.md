@@ -61,7 +61,7 @@ The design was done in the following stages:
 Note: pLDDT filtering at the RFdiffusion is a personal choice
 as there is a weak correlation (personal results: ask if interested) between
 RFdiffusion pLDDT and final Rosetta score.
-Likewise proteinMPNN global_score, but better to stack the deck in your favour.
+Likewise, proteinMPNN global_score, but better to stack the deck in your favour.
 
 ### Symmetry series
 
@@ -185,11 +185,32 @@ for proper analysis see the actual json files, this is just for PyMOL.
 What point mutations are neutral or stabilising for the closed state, but are destabilising for the open state?
 And which of these have precedence in homologues?
 
-...to be continued...
+Two way strategy:
 
-## Chimotrypsin
+* Point mutation on both open and closed states, with check against MSA conservation
+* NSP2B has a linker in the middle: FastDesign of loop beteen W and P
 
-Other serine proteases, like chimotrypsin are not split. What does that look like?
+All residue numbering are in the trimmed construct numbering (off by +22 in NSP3).
+All residues that are beyond a 6Å distance from S36 D60 H120 can be mutated.
+
+### Point mutation scanning
+
+A caveat is that the closed model scores 652.4 kcal/mol, 
+while the open (derived from a different AF3 model) gets -589.0 kcal/mol,
+making it easier _a priori_ to find stabilising mutations for the open state.
+
+...
+
+### Loop design
+
+5 cycles of fast relax with design, with a 1 kcal/mol penalty for a residue change,
+against the closed state model of the trimmed construct
+and a model with a NSP2B loop between W14 and P25 transplated from PDB:8PN6 (W61 to P72),
+namely `WEKDAEVTGNSP` to `WEDQAEISGSSP`, as that is the major difference.
+
+## Chymotrypsin
+
+Other serine proteases, like chymotrypsin are not split. What does that look like?
 
 These extra sheets look different, so poor comparison. I could look for closer structures,
 but most likely it will require some effort to find a useful match...
