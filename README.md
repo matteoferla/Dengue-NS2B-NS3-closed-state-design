@@ -67,7 +67,7 @@ Two caveats:
 the loss of which may be spuriously destabilising.
 
 ![dddG](images/dddG.png)
-![point-mutations](images/point-mutations.png)
+![point-mutations](images/point_mutations.png)
 
 | Mutation |   ∆∆∆G | closed_∆∆G | open_∆∆G |
 |:---------|-------:|-----------:|---------:|
