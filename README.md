@@ -39,6 +39,71 @@ Mostly: top constructs in mostly correct state (fusion, trimmed, full):
 
 ![constructs](images/constructs.png)
 
+## Point mutations
+
+What point mutations are neutral or stabilising for the closed state, but are destabilising for the open state?
+And which of these have precedence in homologues?
+
+Two strategies:
+
+* Point mutation on both open and closed states, with check against MSA conservation
+* NSP2B has a linker in the middle: FastDesign of loop beteen W and P
+
+All residue numbering are in the trimmed construct numbering (off by +22 in NSP3).
+All residues that are beyond a 6Å distance from S36 D60 H120 can be mutated.
+
+### Point mutation scanning
+
+A caveat is that the closed model scores 652.4 kcal/mol, 
+while the open (derived from a different AF3 model) gets -589.0 kcal/mol,
+making it easier _a priori_ to find stabilising mutations for the open state.
+Nevertheless, there were several candidates that were stabilising for the closed state.
+Two caveats:
+
+* the mutations had to be >6Å contact-distance from the catalytic triad.
+    M37F was a mutation of interest to Mike as it is in Zika (S36D M37F),
+    but is too close to the catalytic triad.
+* there is a transient interaction between the N-terminus NSP2B in helical/open form,
+the loss of which may be spuriously destabilising.
+
+![dddG](images/dddG.png)
+![point-mutations](images/point-mutations.png)
+
+| Mutation |   ∆∆∆G | closed_∆∆G | open_∆∆G |
+|:---------|-------:|-----------:|---------:|
+| G22P     | -157.5 |        0.3 |    157.9 |
+| G22H     |  -11.9 |        0.7 |     12.6 |
+| G22T     |  -10.2 |        0.4 |     10.6 |
+| G22S     |   -5.1 |       -0.6 |      4.5 |
+| P25L     |   -4.7 |        0.2 |      4.8 |
+| S21G     |   -4.6 |        0.6 |      5.1 |
+| S32W     |   -4.4 |        0.2 |      4.6 |
+| I20Q     |   -4.2 |       -0.1 |      4.1 |
+| S32Y     |   -4.1 |       -4.1 |        0 |
+| P25H     |   -3.9 |        0.6 |      4.5 |
+| S38F     |   -3.9 |       -0.4 |      3.4 |
+| Q17R     |   -3.9 |       -1.2 |      2.6 |
+| E5W      |   -3.6 |       -0.7 |      2.9 |
+| V12L     |   -3.5 |        0.3 |      3.8 |
+| G22N     |   -3.3 |        0.8 |      4.1 |
+| S32H     |   -3.3 |       -1.1 |      2.2 |
+| S32N     |   -2.9 |       -2.2 |      0.7 |
+| S28W     |   -2.8 |          0 |      2.9 |
+| S32F     |   -2.8 |       -2.1 |      0.8 |
+| S38Y     |   -2.8 |       -0.3 |      2.5 |
+| S28T     |   -2.6 |       -0.5 |      2.1 |
+| V12I     |   -2.5 |        0.5 |        3 |
+| K40Y     |   -2.5 |        0.5 |        3 |
+| T30L     |   -2.4 |       -1.3 |      1.2 |
+| S21T     |   -2.4 |       -1.9 |      0.5 |
+| E5F      |   -2.4 |       -1.2 |      1.2 |
+| S23P     |   -2.4 |       -2.3 |      0.1 |
+| S32A     |   -2.2 |       -0.3 |      1.9 |
+| S28V     |   -2.2 |       -1.1 |      1.1 |
+| S38H     |   -2.1 |       -0.3 |      1.8 |
+| S28F     |     -2 |       -0.2 |      1.8 |
+| T30I     |     -2 |       -1.8 |      0.2 |
+
 ## Design of better linker
 
 The linker construct (NS2B-GGGGSGGGG-NS3) is subpar because the protein itself has floppy ends.
@@ -179,71 +244,6 @@ see JSON files for the actual details.
 Also, note that in the PDB files, 
 the temperature factor is Rosetta per residue energy, design residues have an occupancy of 0.5,
 for proper analysis see the actual json files, this is just for PyMOL.
-
-## Point mutations
-
-What point mutations are neutral or stabilising for the closed state, but are destabilising for the open state?
-And which of these have precedence in homologues?
-
-Two strategies:
-
-* Point mutation on both open and closed states, with check against MSA conservation
-* NSP2B has a linker in the middle: FastDesign of loop beteen W and P
-
-All residue numbering are in the trimmed construct numbering (off by +22 in NSP3).
-All residues that are beyond a 6Å distance from S36 D60 H120 can be mutated.
-
-### Point mutation scanning
-
-A caveat is that the closed model scores 652.4 kcal/mol, 
-while the open (derived from a different AF3 model) gets -589.0 kcal/mol,
-making it easier _a priori_ to find stabilising mutations for the open state.
-Nevertheless, there were several candidates that were stabilising for the closed state.
-Two caveats:
-
-* the mutations had to be >6Å contact-distance from the catalytic triad.
-    M37F was a mutation of interest to Mike as it is in Zika (S36D M37F),
-    but is too close to the catalytic triad.
-* there is a transient interaction between the N-terminus NSP2B in helical/open form,
-the loss of which may be spuriously destabilising.
-
-![dddG](images/dddG.png)
-![point-mutations](images/point-mutations.png)
-
-| Mutation |   ∆∆∆G | closed_∆∆G | open_∆∆G |
-|:---------|-------:|-----------:|---------:|
-| G22P     | -157.5 |        0.3 |    157.9 |
-| G22H     |  -11.9 |        0.7 |     12.6 |
-| G22T     |  -10.2 |        0.4 |     10.6 |
-| G22S     |   -5.1 |       -0.6 |      4.5 |
-| P25L     |   -4.7 |        0.2 |      4.8 |
-| S21G     |   -4.6 |        0.6 |      5.1 |
-| S32W     |   -4.4 |        0.2 |      4.6 |
-| I20Q     |   -4.2 |       -0.1 |      4.1 |
-| S32Y     |   -4.1 |       -4.1 |        0 |
-| P25H     |   -3.9 |        0.6 |      4.5 |
-| S38F     |   -3.9 |       -0.4 |      3.4 |
-| Q17R     |   -3.9 |       -1.2 |      2.6 |
-| E5W      |   -3.6 |       -0.7 |      2.9 |
-| V12L     |   -3.5 |        0.3 |      3.8 |
-| G22N     |   -3.3 |        0.8 |      4.1 |
-| S32H     |   -3.3 |       -1.1 |      2.2 |
-| S32N     |   -2.9 |       -2.2 |      0.7 |
-| S28W     |   -2.8 |          0 |      2.9 |
-| S32F     |   -2.8 |       -2.1 |      0.8 |
-| S38Y     |   -2.8 |       -0.3 |      2.5 |
-| S28T     |   -2.6 |       -0.5 |      2.1 |
-| V12I     |   -2.5 |        0.5 |        3 |
-| K40Y     |   -2.5 |        0.5 |        3 |
-| T30L     |   -2.4 |       -1.3 |      1.2 |
-| S21T     |   -2.4 |       -1.9 |      0.5 |
-| E5F      |   -2.4 |       -1.2 |      1.2 |
-| S23P     |   -2.4 |       -2.3 |      0.1 |
-| S32A     |   -2.2 |       -0.3 |      1.9 |
-| S28V     |   -2.2 |       -1.1 |      1.1 |
-| S38H     |   -2.1 |       -0.3 |      1.8 |
-| S28F     |     -2 |       -0.2 |      1.8 |
-| T30I     |     -2 |       -1.8 |      0.2 |
 
 ### Loop design
 
