@@ -74,7 +74,7 @@ The MSA generated for AF3 modelling was used (NSP2B: 2525, NSP3: 11768).
 The tally was weighted by the Hamming similarity of homologue vs. Dengue and by the sum of the sequences weights,
 formally:
 
-$$S_i = \frac{1}{n} \sum_{j=1}^{n} \mathbb{1}(M_{i,j} \eq M_{1,j})$$
+$$S_i = \frac{1}{n} \sum_{j=1}^{n} \mathbb{1}(M_{i,j} = M_{1,j})$$
 
 $$F_k = \frac{\sum_{i} S_i \cdot \mathbb{1}(M_{i, j} = k)}{\sum_{i} S_i}$$
 
