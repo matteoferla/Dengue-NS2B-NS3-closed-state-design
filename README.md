@@ -68,6 +68,7 @@ the loss of which may be spuriously destabilising.
 
 ![dddG](images/dddG.png)
 ![point-mutations](images/point_mutations.png)
+(gold: catalytic triad, turquoise: 6Å neighbourhood, tints of red: stabilising for closed state)
 
 The MSA generated for AF3 modelling was used (NSP2B: 2525, NSP3: 11768).
 The tally was weighted by the Hamming similarity of homologue vs. Dengue and by the sum of the sequences weights,
