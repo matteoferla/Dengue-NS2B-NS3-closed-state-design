@@ -84,6 +84,8 @@ where:
 - $n$ is the number of sequences,
 - $F_k$ is the frequency of an amino acid or gap $k$, computed using the weighted tally.
 
+NSP2B:
+
 | mutation_full   |   ∆∆∆G | closed_∆∆G |   open_complex_∆∆G |   log10_MSA_freq |
 |:----------------|-------:|-------------:|-------------------:|-----------------:|
 | G22P:A          | -157.5 |          0.3 |              157.9 |           N/A   |
@@ -118,6 +120,11 @@ where:
 | S38H:A          |   -2.1 |         -0.3 |                1.8 |           N/A   |
 | S28F:A          |     -2 |         -0.2 |                1.8 |           N/A   |
 | T30I:A          |     -2 |         -1.8 |                0.2 |             -2.4 |
+
+NSP3:
+
+| mutation_full   |   ∆∆∆G | closed_∆∆G |   open_complex_∆∆G |   log10_MSA_freq |
+|:----------------|-------:|-------------:|-------------------:|-----------------:|
 | T118F:B         |  -27.1 |          0.7 |               27.8 |           N/A   |
 | E169P:B         |  -19.5 |         -0.7 |               18.8 |             -3.9 |
 | A56L:B          |  -17.2 |          0.6 |               17.8 |             -4.2 |
